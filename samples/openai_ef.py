@@ -6,6 +6,7 @@ import os
 
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
     api_key=os.environ["OPENAI_API_KEY"],
+    # https://platform.openai.com/docs/guides/embeddings/embedding-models
     model_name="text-embedding-ada-002",
 )
 
