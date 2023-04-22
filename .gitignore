@@ -1,2 +1,3 @@
 .chromadb/
+.chroma/
 .envrc
