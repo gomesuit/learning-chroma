@@ -24,3 +24,12 @@ results = collection.query(
 )
 
 print(results)
+# {'ids': [['id1', 'id2']], 'embeddings': None, 'documents': [['This is a document', 'This is another document']], 'metadatas': [[{'source': 'my_source'}, {'source': 'my_source'}]], 'distances': [[0.7111215591430664, 1.0109777450561523]]}
+
+results = collection.query(
+    query_texts=["This is a query another document"],
+    n_results=2
+)
+
+print(results)
+# {'ids': [['id2', 'id1']], 'embeddings': None, 'documents': [['This is another document', 'This is a document']], 'metadatas': [[{'source': 'my_source'}, {'source': 'my_source'}]], 'distances': [[0.7669920921325684, 0.8128967881202698]]}
