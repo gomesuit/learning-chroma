@@ -8,6 +8,7 @@ packages = [{include = "learning_chroma"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+chromadb = "^0.3.21"
 
 
 [build-system]
