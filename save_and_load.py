@@ -8,10 +8,18 @@ client = chromadb.Client(Settings(
     persist_directory=".chromadb"
 ))
 
-collection = client.create_collection(name="my_collection")
+collection = client.get_or_create_collection(name="save_and_load")
 
-collection.add(
-    documents=["This is a document", "This is another document"],
-    metadatas=[{"source": "my_source"}, {"source": "my_source"}],
-    ids=["id1", "id2"]
+# requiered for the first run
+# collection.add(
+#     documents=["This is a document", "This is another document"],
+#     metadatas=[{"source": "my_source"}, {"source": "my_source"}],
+#     ids=["id1", "id2"]
+# )
+
+results = collection.query(
+    query_texts=["This is a query document"],
+    n_results=2
 )
+
+print(results)
