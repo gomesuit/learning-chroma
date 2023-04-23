@@ -4,11 +4,11 @@ import chromadb
 
 from chromadb.utils import embedding_functions
 
-openai_ef = embedding_functions.OpenAIEmbeddingFunction(
-    api_key=os.environ["OPENAI_API_KEY"],
-    # https://platform.openai.com/docs/guides/embeddings/embedding-models
-    model_name="text-embedding-ada-002",
-)
+# openai_ef = embedding_functions.OpenAIEmbeddingFunction(
+#     api_key=os.environ["OPENAI_API_KEY"],
+#     # https://platform.openai.com/docs/guides/embeddings/embedding-models
+#     model_name="text-embedding-ada-002",
+# )
 
 chroma_client = chromadb.Client()
 
@@ -19,7 +19,7 @@ collection = chroma_client.create_collection(
 
 import pandas as pd
 
-datafile_path = "data/reviews_100.csv"
+datafile_path = "data/reviews_10000.csv"
 
 df = pd.read_csv(datafile_path)
 
@@ -57,14 +57,14 @@ results = collection.query(
 
 print(results)
 
-results = collection.get(
-    where={"Score": 3}
-)
+# results = collection.get(
+#     where={"Score": 3},
+# )
 
-print(results)
+# print(results)
 
 results = collection.get(
-    ids=['1']
+    ids=['1'],
 )
 
 print(results)
