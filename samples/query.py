@@ -1,5 +1,4 @@
 # https://docs.trychroma.com/usage-guide#querying-a-collection
-
 import chromadb
 chroma_client = chromadb.Client()
 

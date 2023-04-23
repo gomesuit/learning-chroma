@@ -1,8 +1,7 @@
 # https://docs.trychroma.com/embeddings#openai
-import chromadb
-from chromadb.config import Settings
-from chromadb.utils import embedding_functions
 import os
+import chromadb
+from chromadb.utils import embedding_functions
 
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
     api_key=os.environ["OPENAI_API_KEY"],
