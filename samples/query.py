@@ -23,7 +23,23 @@ collection.add(
 
 results = collection.query(
     query_texts=["This is a query document"],
-    n_results=2
+    n_results=2,
+)
+
+print(results)
+
+results = collection.query(
+    query_texts=["delicious"],
+    where={"Score": 1},
+    n_results=2,
+)
+
+print(results)
+
+results = collection.query(
+    query_texts=["delicious"],
+    where_document={"$contains":"candy"},
+    n_results=2,
 )
 
 print(results)
