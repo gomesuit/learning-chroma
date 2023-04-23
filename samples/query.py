@@ -43,3 +43,15 @@ results = collection.query(
 )
 
 print(results)
+
+results = collection.get(
+    where={"Score": 3}
+)
+
+print(results)
+
+results = collection.get(
+    ids=['1']
+)
+
+print(results)
