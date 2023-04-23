@@ -36,6 +36,7 @@ results = collection.query(
 
 print(results)
 
+# https://docs.trychroma.com/usage-guide#using-where-filters
 results = collection.query(
     query_texts=["delicious"],
     where_document={"$contains":"candy"},
