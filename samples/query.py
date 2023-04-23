@@ -1,8 +1,21 @@
 # https://docs.trychroma.com/usage-guide#querying-a-collection
+import os
 import chromadb
+
+from chromadb.utils import embedding_functions
+
+openai_ef = embedding_functions.OpenAIEmbeddingFunction(
+    api_key=os.environ["OPENAI_API_KEY"],
+    # https://platform.openai.com/docs/guides/embeddings/embedding-models
+    model_name="text-embedding-ada-002",
+)
+
 chroma_client = chromadb.Client()
 
-collection = chroma_client.create_collection(name="amazon_reviews_100")
+collection = chroma_client.create_collection(
+    name="amazon_reviews_100",
+    # embedding_function=openai_ef,
+)
 
 import pandas as pd
 
